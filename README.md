@@ -8,5 +8,9 @@ For my Bioinformatics class at Carleton College with amazing prof Rika Anderson,
 If you want to do that, put xxxx_coverage.txt and xxxx_ORFs.faa in the same folder as this script, direct to that folder in your terminal and run: python merge_name.py [ORF_coverage.txt] [ORFs.faa]
 And there is a file with human readable names, as well as the relative abundance of that corresponding gene! 
 
+# Seq_align_proto.py
+A program that uses Needleman–Wunsch algorithm to do end-to-end global alignment. 
+Does a simple sequence alignment with custom alignment scores, and return all possible alignment(s) with the highest alignment score 
+
 # Sequence Alignment with BLOSUM62 matrix
 Too lazy to sequence aligment matrix... So spent much more time writing a program for it. Polishing, coming!!!
