@@ -1,10 +1,10 @@
 # Personal Projects in Bioinformatics
 Some Bioinformatics/Biology related little programs for fun/laziness
 
-# dynamic_programming_sequence_alignment
-A program that uses Needleman–Wunsch algorithm to do sequence global alignment and local alignment
+# dp sequence alignment
+A program that uses Needleman–Wunsch algorithm to do sequence global alignment and local alignment with dynamic programming (dp)
 
-# comparing_Sankoff_parsimony_tree_with_UPGMA_tree
+# comparing Sankoff parsimony tree with UPGMA tree
 Extending on the sequence alignment project. Build phylogenetic tree from amino acid sequences of hemogloblin subunit alpha-a.
 Build evolutionary tree of cat, human, chicken, macaw, 2 macaque speices using blosum62 matrix.
 Compared and contrast 2 trees build by UPGMA algorithm and by brute force parsimony tree finding (using Sankoff Dynamic Programming to calculate parsimony score). 
