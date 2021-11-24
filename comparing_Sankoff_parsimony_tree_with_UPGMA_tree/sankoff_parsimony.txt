@@ -1,0 +1,5 @@
+min_parsimony_score, min_tree_type,min_permutation
+-7027, 4, 241305
+-7027, 4, 241350
+-7027, 4, 421305
+-7027, 4, 421350

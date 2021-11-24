@@ -1,0 +1,50 @@
+from Bio import pairwise2
+from Bio.SubsMat import MatrixInfo as matlist
+
+matrix = matlist.blosum62
+
+def clean(s): return s.replace(" ", "").replace("\n", "")
+
+def cat():
+    s = '''MVLSAADKSNV KACWGKIGSH AGEYGAEALE RTFCSFPTTK TYFPHFDLSH 
+GSAQVKAHGQ KVADALTQAV AHMDDLPTAM SALSDLHAYK LRVDPVNFKF 
+LSHCLLVTLA CHHPAEFTPA VHASLDKFFS AVSTVLTSKY R'''
+    return clean(s)
+
+def human():
+    s = '''MVLSPADKTN VKAAWGKVGA HAGEYGAEAL ERMFLSFPTT KTYFPHFDLS 
+HGSAQVKGHG KKVADALTNA VAHVDDMPNA LSALSDLHAH KLRVDPVNFK 
+LLSHCLLVTL AAHLPAEFTP AVHASLDKFL ASVSTVLTSK YR'''
+    return clean(s)
+
+def macaque():
+    s= '''MVLSPADKSN VKAAWGKVGG HAGEYGAEAL ERMFLSFPTT KTYFPHFDLS 
+HGSAQVKGHG KKVADALTLA VGHVDDMPNA LSALSDLHAH KLRVDPVNFK 
+LLSHCLLVTL AAHLPAEFTP AVHASLDKFL ASVSTVLTSK YR'''
+    return clean(s)
+
+def chicken():
+    s='''MVLSAADKNN VKGIFTKIAG HAEEYGAETL ERMFTTYPPT KTYFPHFDLS 
+HGSAQIKGHG KKVVAALIEA ANHIDDIAGT LSKLSDLHAH KLRVDPVNFK 
+LLGQCFLVVV AIHHPAALTP EVHASLDKFL CAVGTVLTAK YR'''
+    return clean(s)
+
+def crab_eating_macque():
+    s='''MVLSPADKTNV KAAWGKVGGH AGEYGAEALE RMFLSFPTTK TYFPHFDLSH 
+GSAQVKGHGK KVADALTLAV GHVDDMPQAL SALSDLHAHK LRVDPVNFKL 
+LSHCLLVTLA AHLPAEFTPA VHASLDKFLA SVSTVLTSKY R'''
+    return clean(s)
+
+def macaw():
+    s='''MVLSGSDKTN VKGIFSKIGG QAEDYGAEAL ERMFATFPQT KTYFPHFDVS 
+PGSAQVKAHG KKVAAALVEA ANHIDDIATA LSKLSDLHAQ KLRVDPVNFK 
+LLGQCFLVVV AIHNPSALTP EVHASLDKFL CAVGNVLTAK YR'''
+    return clean(s)
+
+def compare_seq(seq1, seq2):
+    align = pairwise2.align.globalds(seq1,seq2, matrix, -5, -3) # gap panelty open = -5, extend = -3
+    align_res = pairwise2.format_alignment(*align[0])
+    # print(align_res)
+    mid = align_res.split("\n")[1]
+    hamming_dist = len(mid)-mid.count("|")
+    return hamming_dist

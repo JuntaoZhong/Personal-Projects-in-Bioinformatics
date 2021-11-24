@@ -1,0 +1,50 @@
+Final tree to put into iTOL for visualization:
+((chicken:15,macaw:13):14,((human:5,(C macaque:4, R macaque:4):1):4,cat:16):13);
+
+''' a type 4 tree:
+    root
+   /    \
+  j      i
+ / \    / \
+e   f  /   h
+      /   / \ 
+     /   /   g  
+    /   /   / \ 
+   d   c   a   b
+
+     root
+    /    \
+  4.1    4.0
+  / \    / \
+1.0 1.1 /  3.0
+       /   / \ 
+      /   /  2.0  
+     /   /   / \ 
+   3.1 2.1 0.0 0.1
+
+result:
+Root - Dist.: (13, 14)
+    Left - Dist.: (4, 16)
+        Left - Dist.: (1, 5)
+            Left - Dist.: (4, 4)
+                Left- value:1 -- 0.0
+                Right- value:2 -- 0.1
+            Right- value:3 -- 2.1
+        Right- value:4 -- 3.1
+    Right - Dist.: (15, 13)
+        Left- value:5 -- 1.0
+        Right- value:6 -- 1.1
+
+Root - Dist.: 21.625
+    Left - Dist.: 11.5
+        Left- value:5 -- macaw
+        Right- value:0 -- chiken
+    Right - Dist.: 10.666666666666666
+        Left - Dist.: 2.0
+            Left - Dist.: 1.0
+                Left- value:4 -- crab-eating monkey
+                Right- value:2 -- monkey
+            Right- value:1 -- human
+        Right- value:3 -- cat
+
+'''

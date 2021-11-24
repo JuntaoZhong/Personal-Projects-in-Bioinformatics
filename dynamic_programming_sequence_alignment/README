@@ -1,0 +1,32 @@
+This is a README file for 
+./run.sh, ./local_alignment.py, and ./global_aligment.py 
+
+local alignment find the highest scoring segment between 2 pieces of DNA
+global alignment is obligated to find the optimal alignment of 2 entire sequences. 
+
+
+There is no need to compile code. Use:
+./run.sh   ---   to run local and global alignment with example data
+
+./local_alignment.py [single sequence fasta 1] [single sequence fasta 2] [scoring matrix] 
+to run the local sequence alignment program
+
+./global_alignment.py [single sequence fasta 1] [single sequence fasta 2] [scoring matrix] 
+to run the global sequence alignment program
+
+Dependencies: biopython (used to import sequences)
+Dependencies that comes with python3 default: os, textwrap, sys
+
+Major Design Decisions:
+This program will only operate when both input sequences have length over 3bp.
+
+It will only return 1 optimal alignment. If there are ties for alignment score,
+this program prefer the one earlier in the sequence. It also prefers "match/mismatch" over "insersion/deletion". 
+
+Also, when the maximum alignment score is 0, this program will not output any
+alignment, because no other alignment is better than aligning nothing at all
+
+Lastly, this program only accepts 2 fasta files, each need to have exactly 1 sequence. 
+
+Known Bugs:
+None
